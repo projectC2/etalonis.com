@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Etalonis — the simulation, training &amp; validation environment for physical AI</title>
+<meta name="description" content="Etalonis is where autonomous AI is trained, rehearsed and validated against a fixed reference standard — the étalon — before it ever runs on a real machine. The flight simulator for any AI-powered machine. Built by Aimrika." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .lang-switch {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    color: var(--faint);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .lang-switch:hover { color: var(--text); border-color: var(--border-strong); }
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%2337e0c8' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%235b9dff'/%3E%3C/svg%3E" />
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" stroke="url(#g1)" stroke-width="1.6"/>
+        <circle cx="16" cy="16" r="8.5" stroke="url(#g1)" stroke-width="1.2" opacity="0.6"/>
+        <circle cx="16" cy="16" r="3.2" fill="#5b9dff"/>
+        <path d="M16 0.5V6M16 26V31.5M0.5 16H6M26 16H31.5" stroke="#37e0c8" stroke-width="1.4" stroke-linecap="round"/>
+        <defs><linearGradient id="g1" x1="2" y1="2" x2="30" y2="30"><stop stop-color="#5b9dff"/><stop offset="1" stop-color="#37e0c8"/></linearGradient></defs>
+      </svg>
+      Etalonis <span class="suffix">by Aimrika</span>
+    </a>
+    <nav class="nav-links" id="menu">
+      <a href="#produces">What it produces</a>
+      <a href="#how">How it works</a>
+      <a href="#etalon">The etalon method</a>
+      <a href="#capability">Capability</a>
+      <a href="#contact" class="nav-cta">Request a briefing</a>
+      <a href="https://aimrika.com" class="lang-switch">AIMRIKA ↗</a>
+    </nav>
+    <button class="nav-toggle" id="toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow reveal"><span class="dot"></span> Etalonis · the simulation, training &amp; validation environment for physical AI</span>
+    <h1 class="reveal">The flight simulator for <span class="grad">any AI-powered machine</span>.</h1>
+    <p class="lede reveal">Etalonis is where autonomous AI is trained, rehearsed and validated against a fixed reference standard — the <em>étalon</em> — before it ever runs on a real machine. A platform-agnostic digital-twin sandbox that runs thousands of scenarios a day, produces the proof, and delivers the certified software and edge-AI module that runs unchanged in the field. Built by <a class="link" href="https://aimrika.com" target="_blank" rel="noopener">Aimrika</a>.</p>
+    <div class="btn-row reveal">
+      <a href="#how" class="btn btn-primary">See how it works</a>
+      <a href="#contact" class="btn btn-ghost">Request a briefing</a>
+    </div>
+    <div class="stats reveal" style="margin-top:64px">
+      <div class="stat"><div class="n">1,000s / day</div><div class="l">scenarios run in simulation</div></div>
+      <div class="stat"><div class="n">~110,000</div><div class="l">labelled images across 23 model families</div></div>
+      <div class="stat"><div class="n">~95%</div><div class="l">detection accuracy achieved</div></div>
+      <div class="stat"><div class="n">GPS-denied</div><div class="l">visual navigation without satellite positioning</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="label">The problem</div>
+      <h2>Robots can be built faster than they can be proven safe.</h2>
+      <p>Real-world trials can't deliver the scale, safety or speed autonomy needs. The rare, critical conditions that matter most — the sensor failure, the degraded weather, the near-miss between two machines — are exactly the ones hardest and riskiest to test for real. You cannot crash your way to a dependable autonomous system.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="prob reveal"><h3><span class="idx">01</span> Scale the real world can't provide</h3><p>Physical AI needs millions of experiences across conditions no live programme can afford to reproduce — gravity, inertia, causality, failure.</p></div>
+      <div class="prob reveal"><h3><span class="idx">02</span> Safety limits live testing</h3><p>The behaviours that make a machine truly autonomous are the ones hardest, and most dangerous, to rehearse for real.</p></div>
+      <div class="prob reveal"><h3><span class="idx">03</span> The edge cases are the point</h3><p>The situations that matter most are exactly the ones you can least afford to stage in reality — so they go untested until they happen.</p></div>
+      <div class="prob reveal"><h3><span class="idx">04</span> Proof, not just a demo</h3><p>A system that looks good in one run isn't validated. Trust needs a fixed standard, applied every time, that a result can be measured and audited against.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT ETALONIS PRODUCES ===== -->
+<section id="produces">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="label">What Etalonis produces</div>
+      <h2>Three things, in sequence — not just a simulator.</h2>
+      <p>Etalonis doesn't stop at running a scenario. It produces the environment, the proof, and the certified thing you actually run in the field — in that order, every time.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="role">01 · Practise — the environment</div>
+        <h3>The simulation &amp; validation sandbox</h3>
+        <p>A platform-agnostic digital-twin sandbox running thousands of realistic scenarios a day, available today. Every candidate change — a new sensor, a retrained model, a software update — runs here first, across weather, terrain, lighting, sensor noise and induced failures, at a scale no physical test programme can match.</p>
+      </div>
+      <div class="card reveal">
+        <div class="role">02 · Proof — the etalon method</div>
+        <h3>A validation authority, not a demo</h3>
+        <p>Every candidate is scored against a fixed reference standard — the <em>étalon</em> — on identical scenarios and identical physics. Because everything except <em>who is acting</em> is held constant, every difference in outcome is attributable to the agent alone. The result is comparable, reproducible and auditable. See the full method below.</p>
+      </div>
+      <div class="card reveal">
+        <div class="role">03 · Product — certified software + hardware</div>
+        <h3>The validated agent, and the machine</h3>
+        <p>Etalonis produces the validated, deployment-ready software and the certified edge-AI compute module that runs it, unchanged, on the real machine. Flying vehicles today; ground and maritime robots next — carrying software that's already been proven, not guessed at.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== HOW IT WORKS — 5-STEP LIFECYCLE ===== -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="label">How it works</div>
+      <h2>Train → Rehearse → Coordinate → Validate → Deploy.</h2>
+      <p>The same AI agent that passes Etalonis runs unchanged on the real edge hardware aboard the real machine. Real-world operation confirms the result; it does not discover it.</p>
+    </div>
+    <div class="arc">
+      <div class="arc-step reveal"><div class="step-n">STEP 01</div><h4>Train</h4><p>The agent learns to perceive, navigate, act, recover and adapt across weather, terrain, lighting, sensor noise and induced failures.</p></div>
+      <div class="arc-step reveal"><div class="step-n">STEP 02</div><h4>Rehearse</h4><p>The exact task — environment, route, objects, conditions — is run to standard in the sandbox. A true dry run, no risk, no cost.</p></div>
+      <div class="arc-step reveal"><div class="step-n">STEP 03</div><h4>Coordinate</h4><p>Fleets of robots, drones and vehicles learn to operate as a team — the multi-agent rehearsal the real world can rarely afford.</p></div>
+      <div class="arc-step reveal"><div class="step-n">STEP 04</div><h4>Validate</h4><p>Every behaviour is benchmarked against a reference system on identical scenarios and physics — the etalon.</p></div>
+      <div class="arc-step reveal"><div class="step-n">STEP 05</div><h4>Deploy</h4><p>The validated agent runs on the real machine. Real-world operation confirms; it does not discover.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== THE ETALON METHOD — DEEP DIVE ===== -->
+<section id="etalon">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <div class="label">The etalon method</div>
+        <h2>Prove, don't assert.</h2>
+        <p style="color:var(--muted);margin-top:16px">No capability is "done" until it beats a control, repeatably. Etalonis is named for this standard — the <em>étalon</em>, the reference against which everything is measured.</p>
+        <ul>
+          <li><strong>What a reference system actually is.</strong> A mature reference implementation that performs the task under the same physics, the same scenario and the same conditions — the achievable ceiling the candidate agent is measured against.</li>
+          <li><strong>What "identical" means in practice.</strong> Identical digital-twin geometry, sensor models and physics parameters between the control run and the candidate run. Everything is held constant except <em>who is acting</em>, so any difference in outcome is attributable purely to the agent.</li>
+          <li><strong>What a validation result looks like.</strong> A scored comparison — task success, track/behaviour error relative to the control, degraded-condition recovery, and reproducibility across repeated runs — not a single cherry-picked run.</li>
+          <li><strong>Why this is an authority, not a demo.</strong> The same fixed standard is applied every time, to every candidate. That is what makes a result comparable, reproducible and auditable — the opposite of a one-off simulation staged to look good.</li>
+        </ul>
+      </div>
+      <div class="etalon-viz reveal">
+        <div class="row"><span>// validation run</span><span class="ok">PASS</span></div>
+        <div class="row"><span>etalon · track error</span><span>1.00×</span></div>
+        <div class="row"><span>agent · track error</span><span class="ok">0.94×</span></div>
+        <div class="row"><span>degraded-sensor recovery</span><span class="ok">✓</span></div>
+        <div class="row"><span>sim-to-real gap</span><span>measured</span></div>
+        <div class="row"><span>reproducible</span><span class="ok">100 / 100</span></div>
+        <div class="row"><span>verdict</span><span class="ok">validated</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY THIS MATTERS — REGULATORY CASE STUDY ===== -->
+<section id="why">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <div class="label">Why this matters · a real example</div>
+        <h2>One licence. A thousand flights. Months, not minutes.</h2>
+        <p style="color:var(--muted);margin-top:16px">Under EU drone regulation (2019/947), a drone over 25kg — or flying beyond visual line of sight, above 120m, or over people — leaves the lightly-regulated "Open" category and needs a full risk assessment (SORA) and, at the top end, an EASA Design Verification Report or Type Certificate: a process comparable in scope to certifying a manned aircraft.</p>
+        <p style="color:var(--muted);margin-top:12px">Getting an autonomous system to operate reliably — and safely alongside other autonomous systems, not just in isolation — plausibly needs on the order of <strong>a thousand times more validation iterations</strong> than a human operator would ever need. Flying a real 25kg+ drone a thousand times to prove one software change isn't just slow: for most operators, it isn't legally possible before the first flight has even cleared its own paperwork.</p>
+        <ul>
+          <li><strong>Simulation isn't an optimisation of this process — it's the only way through it.</strong> Etalonis runs the equivalent of a thousand real flights, across weather, failure modes and multi-agent interactions, inside a digital twin, in minutes.</li>
+          <li><strong>The compliance evidence is a by-product, not a separate task.</strong> A validation run inside Etalonis generates exactly the evidence a SORA or Design Verification submission asks for.</li>
+        </ul>
+      </div>
+      <div class="etalon-viz reveal">
+        <div class="row"><span>// regulatory reality</span><span>SORA / Type Cert</span></div>
+        <div class="row"><span>real flights needed</span><span>~1,000×</span></div>
+        <div class="row"><span>one physical flight</span><span>hours – days</span></div>
+        <div class="row"><span>1,000 runs in Etalonis</span><span class="ok">minutes – hours</span></div>
+        <div class="row"><span>compliance evidence</span><span class="ok">generated automatically</span></div>
+        <div class="row"><span>verdict</span><span class="ok">validated, before the first real flight</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== PROVEN CAPABILITY — NUMBERS EXPLAINED ===== -->
+<section id="capability">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="label">Proven today, not promised</div>
+      <h2>The engineering foundation already exists.</h2>
+      <p>Etalonis is not a concept — it is running infrastructure, proven first on a flying-vehicle platform, generalising to ground and maritime robots as the roadmap extends.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="n">~110,000</div><div class="l">labelled images across 23 model families</div></div>
+      <div class="stat"><div class="n">~95%</div><div class="l">detection accuracy achieved</div></div>
+      <div class="stat"><div class="n">Closed-loop</div><div class="l">detect–track–intercept pipeline on embedded hardware</div></div>
+      <div class="stat"><div class="n">GPS-denied</div><div class="l">visual place recognition for navigation without satellite positioning</div></div>
+    </div>
+    <div class="cards" style="margin-top:32px">
+      <div class="card reveal">
+        <div class="role">Visual Place Recognition</div>
+        <h3>GPS-denied navigation</h3>
+        <p>GPS can be denied, jammed or simply unavailable — indoors, in urban canyons, in contested environments. The agent localises itself from what it sees, not from satellite positioning, and this has been proven where positioning is denied, degraded or spoofed.</p>
+      </div>
+      <div class="card reveal">
+        <div class="role">Multi-agent coordination</div>
+        <h3>Fleets, not just one machine</h3>
+        <p>Testing machines jointly — not just individually — is the harder and more realistic problem, and it is one that physical trials essentially cannot do at any useful scale. In simulation, fleets learn to coordinate safely before a single real deployment.</p>
+      </div>
+      <div class="card reveal">
+        <div class="role">Sim-to-real gap</div>
+        <h3>Measured, not hidden</h3>
+        <p>One scoring harness runs both simulation and reality, so the gap between them is a number you track down over time — not a number you avoid publishing. Honesty by design: we never ship what we have not measured.</p>
+      </div>
+    </div>
+    <div class="table-card reveal" style="margin-top:32px">
+      <table>
+        <thead><tr><th>Capability</th><th>What it means in practice</th></tr></thead>
+        <tbody>
+          <tr><td>Visual Place Recognition (VPR)</td><td>The agent localises itself from what it sees, not from GPS — proven where satellite positioning is denied, degraded or spoofed.</td></tr>
+          <tr><td>Multi-agent rehearsal</td><td>Fleets of machines learn to coordinate — the joint-and-safe operation real-world trials can rarely afford to test at scale.</td></tr>
+          <tr><td>Sim-to-real gap, measured</td><td>One scoring harness runs both simulation and reality, so the gap between them is a measured number, not a hope.</td></tr>
+          <tr><td>Platform-agnostic</td><td>Built on a flying-vehicle platform first; the same environment, methodology and edge-compute architecture generalise to ground and maritime robots.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THREE COMPUTERS ===== -->
+<section id="platform">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="label">The platform</div>
+      <h2>The three computers of physical AI.</h2>
+      <p>Physical AI stands on three computers: one to train the model, one to simulate the world, and one to run inference at the edge. Etalonis is the second — and we make it a validation authority.</p>
+    </div>
+    <div class="three">
+      <div class="tc reveal"><div class="tag">Computer 01</div><h3>Train</h3><p>The AI is trained on commodity GPUs — the AI factory that turns data and experience into capability.</p></div>
+      <div class="tc flag reveal"><div class="tag">Computer 02 · Etalonis</div><h3>Simulate</h3><p>The world model and sandbox where the agent lives thousands of lifetimes across digital twins — built and validated at a scale and speed the real world can't match. We add what general world models lack: a validation authority.</p><span class="pill">This is Etalonis</span></div>
+      <div class="tc reveal"><div class="tag">Computer 03</div><h3>Infer at the edge</h3><p>The validated agent runs on an edge module aboard the real machine — perception to decision to action in real time, on-device, with no cloud and no operator.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== WHERE IT'S USED ===== -->
+<section id="verticals">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="label">Where it's used</div>
+      <h2>One engine. Wherever autonomy must be trusted to act.</h2>
+      <p>The same environment, methodology and edge-compute architecture apply across domains — each with its own validation problem that reality is slow, costly or unsafe to reproduce.</p>
+    </div>
+    <div class="table-card reveal">
+      <table>
+        <thead><tr><th>Domain</th><th>The validation problem simulation solves</th></tr></thead>
+        <tbody>
+          <tr><td>Inspection</td><td>Rehearse rare fault conditions and hard-to-reach geometry before sending a machine to find them for real.</td></tr>
+          <tr><td>Logistics</td><td>Prove reliable behaviour across the long tail of routes, loads and obstacles that a live fleet meets only occasionally.</td></tr>
+          <tr><td>Mobility</td><td>Stage the near-miss and the sensor failure safely, thousands of times, instead of waiting for them on the road.</td></tr>
+          <tr><td>Agriculture</td><td>Seasonal, weather-dependent conditions are expensive and slow to wait for in reality — simulate the season, not just the machine.</td></tr>
+          <tr><td>Mapping</td><td>Validate navigation and localisation across environments and lighting no single survey campaign could cover.</td></tr>
+          <tr><td>Maritime</td><td>Sea state, degraded visibility and GPS-denied navigation rehearsed before a vessel ever leaves port.</td></tr>
+          <tr><td>Energy</td><td>Inspect and operate around high-value, high-risk infrastructure where a real failed trial is not an option.</td></tr>
+          <tr><td>Search &amp; rescue</td><td>Practise the exact conditions that matter most — the ones too rare and too dangerous to stage on demand.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--faint);font-size:0.86rem;margin-top:16px;max-width:70ch">Illustrative of the validation problems Etalonis addresses across domains; not a claim of delivered projects in each vertical.</p>
+  </div>
+</section>
+
+<!-- ===== ROADMAP ===== -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="label">Roadmap</div>
+      <h2>Proven first on flight. Built to generalise.</h2>
+      <p>Proven first on a flying-vehicle platform. The same environment, methodology and edge-compute architecture are built to generalise to ground vehicles and maritime vessels as the product roadmap extends.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ===== BUILT BY AIMRIKA ===== -->
+<section id="company">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <div class="label">Built by Aimrika</div>
+        <h2>The company behind Etalonis.</h2>
+        <p style="color:var(--muted);margin-top:16px">Etalonis is built by <a class="link" href="https://aimrika.com" target="_blank" rel="noopener">Aimrika GmbH</a>, founded by Volodymyr Levykin — founder of <a class="link" href="https://www.skyrora.com" target="_blank" rel="noopener">Skyrora</a>, the British orbital-launch company. The conviction is the same: real capability, built honestly, proven before it ships.</p>
+        <div class="btn-row" style="margin-top:24px">
+          <a href="https://aimrika.com" class="btn btn-ghost" target="_blank" rel="noopener">Visit aimrika.com →</a>
+        </div>
+      </div>
+      <div class="etalon-viz reveal">
+        <div class="row"><span>// company</span><span>Aimrika GmbH</span></div>
+        <div class="row"><span>register</span><span>HRB 144335</span></div>
+        <div class="row"><span>founder</span><span class="ok">Volodymyr Levykin</span></div>
+        <div class="row"><span>flagship</span><span class="ok">Etalonis</span></div>
+        <div class="row"><span>seat</span><span>Eschborn, Germany</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="label" style="color:var(--accent-2)">Request a briefing</div>
+      <h2>Put Etalonis in front of your hardest validation problem.</h2>
+      <p style="color:var(--muted);max-width:56ch;margin:16px auto 0">For a technical briefing, a pilot, a partnership or an integration enquiry — reach out and tell us what you're trying to prove.</p>
+      <div class="grid">
+        <div class="box"><div class="k">Email</div><div class="v"><a href="mailto:info@etalonis.com">info@etalonis.com</a></div></div>
+        <div class="box"><div class="k">Built by</div><div class="v">Aimrika GmbH <span style="color:var(--faint)">· HRB 144335</span></div></div>
+        <div class="box"><div class="k">Registered office</div><div class="v">Eschborn, Frankfurt&nbsp;/&nbsp;Main region, Germany</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" stroke="url(#g2)" stroke-width="1.6"/>
+        <circle cx="16" cy="16" r="3.2" fill="#5b9dff"/>
+        <path d="M16 0.5V6M16 26V31.5M0.5 16H6M26 16H31.5" stroke="#37e0c8" stroke-width="1.4" stroke-linecap="round"/>
+        <defs><linearGradient id="g2" x1="2" y1="2" x2="30" y2="30"><stop stop-color="#5b9dff"/><stop offset="1" stop-color="#37e0c8"/></linearGradient></defs>
+      </svg>
+      Etalonis <span style="color:var(--faint)">· by Aimrika GmbH</span>
+    </div>
+    <div class="foot-links">
+      <a href="#produces">What it produces</a>
+      <a href="#how">How it works</a>
+      <a href="#etalon">Etalon method</a>
+      <a href="#capability">Capability</a>
+      <a href="#contact">Contact</a>
+      <a href="https://aimrika.com" style="color:var(--faint)">aimrika.com ↗</a>
+    </div>
+    <div class="legal">
+      © <span id="yr"></span> Aimrika GmbH · Eschborn, Germany. Etalonis — the simulation, training and validation environment for physical AI.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var t = document.getElementById('toggle'), m = document.getElementById('menu');
+  t.addEventListener('click', function(){ m.classList.toggle('open'); });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ m.classList.remove('open'); }); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
