@@ -207,9 +207,9 @@
       <p>Etalonis is not a concept — it is running infrastructure, proven first on a flying-vehicle platform, generalising to ground and maritime robots as the roadmap extends.</p>
     </div>
     <div class="stats reveal">
-      <div class="stat"><div class="n">~110,000</div><div class="l">labelled images across 23 model families</div></div>
-      <div class="stat"><div class="n">~95%</div><div class="l">detection accuracy achieved</div></div>
-      <div class="stat"><div class="n">Closed-loop</div><div class="l">detect–track–intercept pipeline on embedded hardware</div></div>
+      <div class="stat"><div class="n">24</div><div class="l">trained AI models across 9 architecture variants</div></div>
+      <div class="stat"><div class="n">0.947 mAP50</div><div class="l">production maritime detection, live 24/7 on Jetson Orin Nano</div></div>
+      <div class="stat"><div class="n">Closed-loop</div><div class="l">object-detection-and-localization pipeline on embedded hardware</div></div>
       <div class="stat"><div class="n">GPS-denied</div><div class="l">visual place recognition for navigation without satellite positioning</div></div>
     </div>
     <div class="cards" style="margin-top:32px">
@@ -239,6 +239,38 @@
           <tr><td>Platform-agnostic</td><td>Built on a flying-vehicle platform first; the same environment, methodology and edge-compute architecture generalise to ground and maritime robots.</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:64px">
+      <div class="label">Hardware tiers, measured</div>
+      <h3>The full edge-to-server spectrum — today, not on a roadmap slide.</h3>
+      <p>We run the same models across the real hardware spectrum, measure them, and tell you which tier actually earns its cost for your workload. Four tiers are operational today (13–100 TOPS); three more are in active integration.</p>
+    </div>
+    <div class="table-card reveal">
+      <table>
+        <thead><tr><th>Tier</th><th>Device</th><th>Performance</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Entry</td><td>Raspberry Pi 5 + Hailo-8L accelerator (~€70 accelerator)</td><td>13 TOPS</td><td>Operational</td></tr>
+          <tr><td>Entry+</td><td>Raspberry Pi 5 + Hailo-8 accelerator</td><td>26 TOPS</td><td>Operational</td></tr>
+          <tr><td>Mid</td><td>NVIDIA Jetson Orin Nano Super</td><td>67 TOPS</td><td>Operational</td></tr>
+          <tr><td>High</td><td>NVIDIA Jetson Orin NX</td><td>100 TOPS</td><td>Operational</td></tr>
+          <tr><td>Efficiency</td><td>SiMa.ai Modalix</td><td>50 TOPS at 8–12 W</td><td>In integration</td></tr>
+          <tr><td>High+</td><td>NVIDIA Jetson AGX Orin 64GB</td><td>275 TOPS</td><td>In integration</td></tr>
+          <tr><td>Server-class</td><td>NVIDIA DGX Spark (Grace Blackwell)</td><td>~1 PFLOPS</td><td>In integration</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cards" style="margin-top:32px">
+      <div class="card reveal">
+        <div class="role">Production · Jetson Orin Nano</div>
+        <h3>Maritime detection, live 24/7</h3>
+        <p><strong>mAP50 0.947 at 47.9 FPS</strong>, serving a live, round-the-clock camera pipeline. Not a demo number — the measured output of the same pipeline we benchmark every tier with.</p>
+      </div>
+      <div class="card reveal">
+        <div class="role">Validated · Jetson Orin NX</div>
+        <h3>Civilian-only detection</h3>
+        <p><strong>mAP50 0.933</strong>, explicitly tested to <em>reject</em> the non-target class: a 500-image rejection test at a <strong>1.4% false-positive rate (pass)</strong>. 64 FPS with DeepStream, 47.6 FPS raw TensorRT.</p>
+      </div>
     </div>
   </div>
 </section>
